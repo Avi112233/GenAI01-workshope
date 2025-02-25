@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+    <title>Joke Generator</title> <!-- Title of the webpage -->
+    <style>
+        /* CSS styles for the body */
+        body {
+            background-color: #e0f7fa; /* Light blue background */
+            color: #0277bd; /* Dark blue text */
+            font-family: 'Arial', sans-serif; /* Font style */
+            display: flex; /* Use Flexbox for layout */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Styles for the container */
+        .container {
+            text-align: center; /* Center text within the container */
+        }
+
+        /* Styles for the button */
+        button {
+            background-color: #03a9f4; /* Blue button background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Padding around the button */
+            font-size: 16px; /* Font size for button text */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        /* Styles for button hover effect */
+        button:hover {
+            background-color: #0288d1; /* Darker blue on hover */
+        }
+
+        /* Styles for the paragraph displaying the joke */
+        p {
+            font-size: 24px; /* Font size for the joke text */
+            margin-top: 20px; /* Space above the joke text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Joke Generator 🤣</h1> <!-- Main heading of the application -->
+        <button id="jokeButton">Tell me a joke!</button> <!-- Button to trigger joke display -->
+        <p id="jokeDisplay"></p> <!-- Paragraph to display the selected joke -->
+    </div>
+    <script>
+        // Array of joke objects, each containing an id and a joke string
+        const jokes = [
+            { id: 1, joke: "Why don't scientists trust atoms? Because they make up everything! 🤔" },
+            { id: 2, joke: "Why did the scarecrow win an award? Because he was outstanding in his field! 🌾" },
+            { id: 3, joke: "Why don't skeletons fight each other? They don't have the guts! 💀" },
+            { id: 4, joke: "What do you call fake spaghetti? An impasta! 🍝" },
+            { id: 5, joke: "Why did the bicycle fall over? Because it was two-tired! 🚲" },
+            { id: 6, joke: "What do you call cheese that isn't yours? Nacho cheese! 🧀" },
+            { id: 7, joke: "Why did the math book look sad? Because it had too many problems! 📚" },
+            { id: 8, joke: "What do you call a bear with no teeth? A gummy bear! 🐻" },
+            { id: 9, joke: "Why did the golfer bring two pairs of pants? In case he got a hole in one! ⛳" },
+            { id: 10, joke: "What did one wall say to the other wall? I'll meet you at the corner! 🧱" }
+        ];
+
+        // Event listener for the button click
+        document.getElementById('jokeButton').addEventListener('click', function() {
+            // Generate a random index to select a joke
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            // Display the selected joke in the paragraph
+            document.getElementById('jokeDisplay').innerText = jokes[randomIndex].joke;
+        });
+    </script>
+</body>
+</html>
